@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 async function render() {
@@ -34,8 +35,17 @@ test("server-renders the Fluid Labs company site", async () => {
   );
   assert.match(html, /Fluid Labs LLC/);
   assert.match(html, /FitnessCoach/);
-  assert.match(html, /dev@fluidlabs\.com/);
+  assert.match(html, /contact@fluidlabs\.com/);
   assert.match(html, /A Fluid Labs product/);
   assert.doesNotMatch(html, /https:\/\/fitnesscoach\.app/);
   assert.doesNotMatch(html, /codex-preview|Starter Project|taking shape/i);
+});
+
+test("keeps the hero artwork static", async () => {
+  const css = await readFile(
+    new URL("../app/globals.css", import.meta.url),
+    "utf8",
+  );
+
+  assert.doesNotMatch(css, /@keyframes|animation\s*:/i);
 });

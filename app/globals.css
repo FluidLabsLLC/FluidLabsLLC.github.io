@@ -212,7 +212,6 @@ h1 {
 .orbit-large {
   width: 78%;
   aspect-ratio: 1;
-  animation: rotate 16s linear infinite;
 }
 
 .orbit-small {
@@ -454,19 +453,9 @@ a:focus-visible {
   outline-offset: 4px;
 }
 
-@keyframes rotate {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-
-  .orbit-large {
-    animation: none;
   }
 }
 

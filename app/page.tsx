@@ -1,4 +1,4 @@
-const contactEmail = "dev@fluidlabs.com";
+const contactEmail = "contact@fluidlabs.com";
 
 export default function Home() {
   return (
