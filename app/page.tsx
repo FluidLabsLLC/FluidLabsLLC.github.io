@@ -1,4 +1,4 @@
-const contactEmail = "contact@fluidlabs.com";
+const contactEmail = "contact@fluidlabsllc.com";
 
 export default function Home() {
   return (
@@ -8,7 +8,7 @@ export default function Home() {
           <span className="brand-mark" aria-hidden="true">
             FL
           </span>
-          <span>Fluid Labs</span>
+          <span>Fluid Labs LLC</span>
         </a>
 
         <nav>
@@ -43,15 +43,6 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hero-panel" aria-hidden="true">
-          <div className="panel-grid" />
-          <div className="orbit orbit-large">
-            <span className="orbit-dot" />
-          </div>
-          <div className="orbit orbit-small" />
-          <div className="panel-monogram">FL</div>
-          <p>Design · Build · Refine</p>
-        </div>
       </section>
 
       <section className="company section-shell" id="company">

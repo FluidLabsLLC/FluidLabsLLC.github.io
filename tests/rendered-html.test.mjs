@@ -35,17 +35,35 @@ test("server-renders the Fluid Labs company site", async () => {
   );
   assert.match(html, /Fluid Labs LLC/);
   assert.match(html, /FitnessCoach/);
-  assert.match(html, /contact@fluidlabs\.com/);
+  assert.match(html, /contact@fluidlabsllc\.com/);
   assert.match(html, /A Fluid Labs product/);
   assert.doesNotMatch(html, /https:\/\/fitnesscoach\.app/);
   assert.doesNotMatch(html, /codex-preview|Starter Project|taking shape/i);
 });
 
-test("keeps the hero artwork static", async () => {
-  const css = await readFile(
-    new URL("../app/globals.css", import.meta.url),
+test("omits decorative hero artwork and motion", async () => {
+  const [page, css] = await Promise.all([
+    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+  ]);
+
+  assert.doesNotMatch(
+    page,
+    /hero-panel|panel-grid|panel-monogram|orbit-large|orbit-small/i,
+  );
+  assert.doesNotMatch(
+    css,
+    /hero-panel|panel-grid|panel-monogram|orbit-large|orbit-small/i,
+  );
+  assert.doesNotMatch(css, /@keyframes|animation\s*:/i);
+});
+
+test("uses the legal company name consistently", async () => {
+  const page = await readFile(
+    new URL("../app/page.tsx", import.meta.url),
     "utf8",
   );
 
-  assert.doesNotMatch(css, /@keyframes|animation\s*:/i);
+  assert.doesNotMatch(page, />Fluid Labs</);
+  assert.match(page, />Fluid Labs LLC</);
 });
