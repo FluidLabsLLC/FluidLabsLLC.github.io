@@ -1,13 +1,14 @@
-@import "tailwindcss";
-
 :root {
   --ink: #151714;
   --paper: #f1efe8;
-  --paper-deep: #e5e1d6;
   --line: rgba(21, 23, 20, 0.16);
   --acid: #d7ff43;
   --blue: #1d5cff;
   --muted: #666961;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", monospace;
 }
 
 * {
@@ -15,14 +16,16 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  background: var(--paper);
 }
 
 body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 a {
@@ -68,7 +71,7 @@ footer {
   border-radius: 50%;
   background: var(--ink);
   color: var(--paper);
-  font-family: var(--font-geist-mono), monospace;
+  font-family: var(--mono);
   font-size: 11px;
   letter-spacing: -0.06em;
 }
@@ -78,10 +81,6 @@ nav {
   align-items: center;
   gap: 36px;
   font-size: 14px;
-}
-
-nav a {
-  transition: opacity 160ms ease;
 }
 
 nav a:hover {
@@ -107,7 +106,7 @@ nav .nav-contact {
   align-items: center;
   gap: 10px;
   color: var(--muted);
-  font-family: var(--font-geist-mono), monospace;
+  font-family: var(--mono);
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -162,18 +161,14 @@ h1 {
   background: var(--ink);
   color: var(--paper);
   font-size: 14px;
-  transition:
-    transform 160ms ease,
-    background 160ms ease;
 }
 
 .primary-action:hover {
-  transform: translateY(-2px);
   background: var(--blue);
 }
 
 .text-action {
-  font-family: var(--font-geist-mono), monospace;
+  font-family: var(--mono);
   font-size: 12px;
   text-decoration: underline;
   text-decoration-color: var(--line);
@@ -195,7 +190,7 @@ h1 {
 .section-number {
   margin: 0;
   color: var(--muted);
-  font-family: var(--font-geist-mono), monospace;
+  font-family: var(--mono);
   font-size: 11px;
   letter-spacing: 0.09em;
   text-transform: uppercase;
@@ -237,7 +232,7 @@ h2 {
 
 .company-facts dt {
   color: var(--muted);
-  font-family: var(--font-geist-mono), monospace;
+  font-family: var(--mono);
   font-size: 11px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -260,9 +255,6 @@ h2 {
   align-items: center;
   border-top: 1px solid var(--ink);
   border-bottom: 1px solid var(--ink);
-  transition:
-    padding 180ms ease,
-    color 180ms ease;
 }
 
 .product-identity {
@@ -279,7 +271,7 @@ h2 {
   border-radius: 15px;
   background: var(--blue);
   color: white;
-  font-family: var(--font-geist-mono), monospace;
+  font-family: var(--mono);
   font-size: 13px;
 }
 
@@ -294,7 +286,7 @@ h2 {
 .product-status {
   margin: 0;
   color: var(--muted);
-  font-family: var(--font-geist-mono), monospace;
+  font-family: var(--mono);
   font-size: 10px;
   letter-spacing: 0.07em;
   text-transform: uppercase;
@@ -312,7 +304,7 @@ h2 {
   justify-content: space-between;
   gap: 12px;
   color: var(--ink);
-  font-family: var(--font-geist-mono), monospace;
+  font-family: var(--mono);
   font-size: 11px;
 }
 
@@ -339,9 +331,8 @@ h2 {
   gap: 20px;
   border-top: 1px solid var(--ink);
   border-bottom: 1px solid var(--ink);
-  font-family: var(--font-geist-mono), monospace;
+  font-family: var(--mono);
   font-size: 12px;
-  transition: color 160ms ease;
 }
 
 .contact-row a:hover {
@@ -359,7 +350,7 @@ footer {
 footer p {
   margin: 0;
   color: var(--muted);
-  font-family: var(--font-geist-mono), monospace;
+  font-family: var(--mono);
   font-size: 10px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -378,12 +369,6 @@ footer p {
 a:focus-visible {
   outline: 3px solid var(--acid);
   outline-offset: 4px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
 }
 
 @media (max-width: 900px) {

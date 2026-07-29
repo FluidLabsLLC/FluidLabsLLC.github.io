@@ -1,20 +1,29 @@
 # Fluid Labs LLC
 
-The public company website for Fluid Labs LLC.
+Static company website for [fluidlabsllc.com](https://fluidlabsllc.com).
 
-## Local development
+## Hosting
 
-Requires Node.js 22.13 or newer.
+The site is designed for GitHub Pages and has no runtime dependencies or build
+step. GitHub Pages should publish the repository's `main` branch from the
+repository root.
+
+- `index.html` contains the website content.
+- `styles.css` contains the responsive presentation.
+- `CNAME` assigns the custom domain.
+- `.nojekyll` disables Jekyll processing.
+- `robots.txt` and `sitemap.xml` support search indexing.
+
+## Local preview
 
 ```bash
-npm install
-npm run dev
+python3 -m http.server 8080
 ```
 
-Use `npm run build` to create and verify a production build.
+Then open `http://localhost:8080`.
 
-## Company details
+## DNS
 
-The public business name, product details, and contact email are defined in
-`app/page.tsx`. Confirm that they match the legal entity used for Apple
-Developer Program enrollment before connecting the production domain.
+Point both the apex domain and `www` records at GitHub Pages using the values in
+GitHub's Pages settings. Preserve all MX, SPF, DKIM, and DMARC records used by
+`contact@fluidlabsllc.com`.
