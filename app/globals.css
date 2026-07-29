@@ -339,11 +339,6 @@ h2 {
     color 180ms ease;
 }
 
-.product-card:hover {
-  padding-inline: 20px;
-  color: var(--blue);
-}
-
 .product-identity {
   display: flex;
   align-items: center;

@@ -1,4 +1,3 @@
-const fitnessCoachUrl = "https://fitnesscoach.app";
 const contactEmail = "dev@fluidlabs.com";
 
 export default function Home() {
@@ -91,13 +90,7 @@ export default function Home() {
           <h2>Products with a clear purpose.</h2>
         </div>
 
-        <a
-          className="product-card"
-          href={fitnessCoachUrl}
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Visit the FitnessCoach website"
-        >
+        <article className="product-card">
           <div className="product-identity">
             <span className="product-mark" aria-hidden="true">
               FC
@@ -114,10 +107,10 @@ export default function Home() {
           </p>
 
           <span className="product-link">
-            fitnesscoach.app
-            <span aria-hidden="true">↗</span>
+            A Fluid Labs product
+            <span aria-hidden="true">01</span>
           </span>
-        </a>
+        </article>
       </section>
 
       <section className="contact section-shell" id="contact">

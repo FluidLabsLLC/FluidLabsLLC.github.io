@@ -35,6 +35,7 @@ test("server-renders the Fluid Labs company site", async () => {
   assert.match(html, /Fluid Labs LLC/);
   assert.match(html, /FitnessCoach/);
   assert.match(html, /dev@fluidlabs\.com/);
-  assert.match(html, /https:\/\/fitnesscoach\.app/);
+  assert.match(html, /A Fluid Labs product/);
+  assert.doesNotMatch(html, /https:\/\/fitnesscoach\.app/);
   assert.doesNotMatch(html, /codex-preview|Starter Project|taking shape/i);
 });
